@@ -19,7 +19,7 @@ package com.alpoyy.sneakgrow.core;
  * </ul>
  */
 public final class RadiusCheck {
-	private RadiusCheck() {
+	public RadiusCheck() {
 	}
 
 	/**

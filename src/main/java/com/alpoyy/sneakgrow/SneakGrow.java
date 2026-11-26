@@ -13,6 +13,11 @@ import org.slf4j.LoggerFactory;
 /**
  * SneakGrow — mempercepat pertumbuhan tanaman di sekitar pemain saat jongkok.
  *
+ * <p>Mekanisme aktivasi: growth dipicu berdasarkan transisi state crouch pemain.
+ * Ketika player mulai jongkok (transisi dari berdiri ke jongkok), growth diproses
+ * instan. Setiap siklus crouch→stand→crouch berikutnya bisa memicu growth lagi.
+ * Menahan crouch terus memproses growth secara kontinu.
+ *
  * <p>Seluruh logika berjalan di sisi server (authoritative): deteksi sneak,
  * pemindaian radius, dan perubahan blok semua terjadi pada thread server.
  * Tidak ada kode client dan tidak ada networking khusus, sehingga mod cukup
@@ -23,6 +28,9 @@ public class SneakGrow implements ModInitializer {
 	public static final String MOD_ID = "sneakgrow";
 	public static final Logger LOGGER = LoggerFactory.getLogger("SneakGrow");
 
+	// State per-player untuk tracking crouch activation
+	public static final java.util.Map<Long, Boolean> SNEAKING_STATE = new java.util.HashMap<>();
+
 	@Override
 	public void onInitialize() {
 		Path configPath = FabricLoader.getInstance().getConfigDir().resolve(MOD_ID + ".json");
@@ -31,10 +39,9 @@ public class SneakGrow implements ModInitializer {
 		new GrowthHandler(config).register();
 
 		LOGGER.info(
-				"[SneakGrow] Aktif. Radius {} blok, interval {} tick, percepatan sugar cane: {}. "
+				"[SneakGrow] Aktif. Radius {} blok, percepatan sugar cane: {}. "
 						+ "Jongkok (Shift) di dekat tanaman untuk mempercepat pertumbuhan.",
 				config.getRadius(),
-				config.getIntervalTicks(),
 				config.isSugarCaneEnabled() ? "aktif" : "nonaktif");
 	}
 }

@@ -1,3 +1,3 @@
-[01:47:49] [Test worker/INFO]: [SneakGrow] Config tidak ditemukan, membuat file default di /tmp/junit-15160395246783437550/sneakgrow.json.
-[01:47:50] [Test worker/WARN]: [SneakGrow] Gagal membaca config di /tmp/junit-1468779627991513972/sneakgrow.json (com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 1 column 8 path $.ini
+[12:37:40] [Test worker/INFO]: [SneakGrow] Config tidak ditemukan, membuat file default di /tmp/junit-9187812677443706406/sneakgrow.json.
+[12:37:40] [Test worker/WARN]: [SneakGrow] Gagal membaca config di /tmp/junit-3496999016481686951/sneakgrow.json (com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 1 column 8 path $.ini
 See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json). Memakai nilai default.

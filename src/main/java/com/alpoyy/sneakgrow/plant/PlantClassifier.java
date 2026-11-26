@@ -50,7 +50,7 @@ import net.minecraft.block.TallPlantBlock;
  * diproses. Prinsipnya: jika kategori blok tidak jelas, jangan proses.
  */
 public final class PlantClassifier {
-	private PlantClassifier() {
+	public PlantClassifier() {
 	}
 
 	/**
