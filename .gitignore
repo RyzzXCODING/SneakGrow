@@ -1,0 +1,30 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+bin/
+
+# Fabric / Loom dev environment
+run/
+remappedSrc/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jangan pernah commit secret
+*.env
+*.key
+*.pem
+credentials.json

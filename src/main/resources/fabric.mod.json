@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "sneakgrow",
+	"version": "${version}",
+	"name": "SneakGrow",
+	"description": "Mempercepat pertumbuhan tanaman di sekitar pemain saat jongkok. Cukup tahan Shift untuk membantu tanaman tumbuh lebih cepat dalam radius 4 blok tanpa perlu menggunakan bone meal. Rumput liar dan bunga tidak ikut terkena efek.",
+	"authors": [
+		"Alpoyy"
+	],
+	"contact": {
+		"homepage": "https://github.com/RyzzXCODING/SneakGrow",
+		"sources": "https://github.com/RyzzXCODING/SneakGrow"
+	},
+	"license": "MIT",
+	"icon": "assets/sneakgrow/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.alpoyy.sneakgrow.SneakGrow"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
